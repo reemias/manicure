@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Débora Lima – Nail Designer</title>
+
+    <!-- SEO Meta -->
+    <meta name="description" content="Nail Designer especializada em alongamentos, nail art e banho de gel. Atendimentos em Maceió. Agende seu horário e realce sua beleza." />
+    <meta property="og:title" content="Débora Lima – Nail Designer" />
+    <meta property="og:description" content="Nail Designer especializada em alongamentos, nail art e banho de gel. Atendimentos em Maceió." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://deboralima.naills.com.br/" />
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <style>
+        /* ===== RESET E VARIÁVEIS ===== */
+        :root {
+            --rosa-principal: #D81B60;
+            --rosa-claro: #F8E8EE;
+            --rosa-escuro: #880E4F;
+            --lilás: #9C27B0;
+            --lilás-claro: #F3E5F5;
+            --cinza-claro: #F9F9F9;
+            --cinza-texto: #6B7280;
+            --cinza-escuro: #374151;
+            --branco: #FFFFFF;
+            --preto: #1F2937;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--cinza-escuro);
+            background: var(--branco);
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .btn-rosa {
+            background: var(--rosa-principal);
+            color: var(--branco);
+            padding: 12px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            border: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1rem;
+        }
+
+        .btn-rosa:hover {
+            background: #c2185b;
+            color: var(--branco);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(216, 27, 96, 0.25);
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 1050;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(216, 27, 96, 0.08);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.02);
+            padding: 10px 0;
+        }
+
+        .header .logo {
+            font-weight: 800;
+            font-size: 1.4rem;
+            color: var(--rosa-principal);
+            letter-spacing: -0.5px;
+        }
+
+        .header .logo span {
+            font-weight: 300;
+            color: var(--cinza-escuro);
+        }
+
+        .header .nav-link {
+            color: var(--cinza-escuro);
+            font-weight: 500;
+            font-size: 0.9rem;
+            padding: 0.5rem 1rem;
+            border-radius: 12px;
+            transition: all 0.2s ease;
+        }
+
+        .header .nav-link:hover {
+            background: var(--rosa-claro);
+            color: var(--rosa-principal);
+        }
+
+        .header .btn-rosa {
+            padding: 8px 24px;
+            font-size: 0.9rem;
+        }
+
+        /* ===== CORREÇÃO MENU MOBILE ===== */
+        @media (max-width: 991.98px) {
+            .header {
+                position: relative;
+            }
+
+            .navbar-collapse {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--branco);
+                padding: 1rem 1.5rem;
+                z-index: 1050;
+                max-height: calc(100vh - 80px);
+                overflow-y: auto;
+                border-top: 1px solid rgba(216, 27, 96, 0.08);
+                box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+            }
+
+            .navbar-nav .nav-link {
+                padding: 0.75rem 0;
+                border-bottom: 1px solid var(--rosa-claro);
+            }
+
+            .navbar-nav .nav-link:last-child {
+                border-bottom: none;
+            }
+
+            .navbar-nav .btn-rosa {
+                margin: 0.5rem 0;
+                width: 100%;
+                justify-content: center;
+            }
+
+            .navbar-toggler {
+                border: none;
+                padding: 0.5rem;
+            }
+
+            .navbar-toggler:focus {
+                box-shadow: none;
+            }
+
+            .navbar-toggler-icon {
+                background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(216,27,96,0.9)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+            }
+        }
+
+        /* ===== HERO CARROSSEL ===== */
+        .hero-carousel {
+            position: relative;
+            overflow: hidden;
+            background: var(--rosa-claro);
+        }
+
+        .hero-carousel .carousel-item {
+            min-height: 500px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-carousel .carousel-item img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+
+        .hero-carousel .carousel-control-prev,
+        .hero-carousel .carousel-control-next {
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 1;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        .hero-carousel .carousel-control-prev {
+            left: 20px;
+        }
+
+        .hero-carousel .carousel-control-next {
+            right: 20px;
+        }
+
+        .hero-carousel .carousel-control-prev-icon,
+        .hero-carousel .carousel-control-next-icon {
+            filter: invert(1);
+            background-size: 60%;
+        }
+
+        .hero-carousel .carousel-indicators {
+            bottom: 20px;
+        }
+
+        .hero-carousel .carousel-indicators button {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            border: none;
+            margin: 0 6px;
+        }
+
+        .hero-carousel .carousel-indicators button.active {
+            background: var(--rosa-principal);
+        }
+
+        .hero-carousel .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: var(--branco);
+            z-index: 2;
+            width: 90%;
+            max-width: 600px;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-carousel .hero-content h1 {
+            font-weight: 800;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+        }
+
+        .hero-carousel .hero-content h1 span {
+            color: var(--rosa-principal);
+        }
+
+        .hero-carousel .hero-content p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* ===== CORES (ESMALTES) ===== */
+        .cores-section {
+            padding: 60px 0;
+            background: var(--branco);
+        }
+
+        .cores-section .section-title {
+            font-weight: 700;
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            color: var(--rosa-escuro);
+            text-align: center;
+        }
+
+        .cores-section .section-title span {
+            color: var(--rosa-principal);
+        }
+
+        .cores-section .cor-item {
+            flex: 0 0 auto;
+            width: 120px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .cores-section .cor-item:hover {
+            transform: translateY(-8px);
+        }
+
+        .cores-section .cor-item .cor-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto;
+            border: 3px solid var(--rosa-claro);
+            transition: border-color 0.3s;
+            overflow: hidden;
+        }
+
+        .cores-section .cor-item:hover .cor-img {
+            border-color: var(--rosa-principal);
+        }
+
+        .cores-section .cor-item .cor-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .cores-section .cor-item .cor-nome {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--cinza-escuro);
+            margin-top: 8px;
+        }
+
+        .cores-section .carousel-control-prev,
+        .cores-section .carousel-control-next {
+            width: 36px;
+            height: 36px;
+            background: var(--rosa-principal);
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 1;
+        }
+
+        .cores-section .carousel-control-prev {
+            left: -18px;
+        }
+
+        .cores-section .carousel-control-next {
+            right: -18px;
+        }
+
+        .cores-section .carousel-control-prev-icon,
+        .cores-section .carousel-control-next-icon {
+            background-size: 50%;
+        }
+
+        /* ===== SERVIÇOS ===== */
+        .servicos {
+            padding: 80px 0;
+            background: var(--cinza-claro);
+        }
+
+        .servicos .section-title {
+            font-weight: 700;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            color: var(--rosa-escuro);
+            text-align: center;
+        }
+
+        .servicos .section-title span {
+            color: var(--rosa-principal);
+        }
+
+        .servico-card-row {
+            background: var(--branco);
+            border-radius: 24px 8px 24px 8px;
+            padding: 20px 24px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .servico-card-row:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(216, 27, 96, 0.06);
+        }
+
+        .servico-card-row .icon {
+            font-size: 2rem;
+            color: var(--rosa-principal);
+        }
+
+        .servico-card-row h5 {
+            font-weight: 700;
+            color: var(--rosa-escuro);
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+        }
+
+        .servico-card-row p {
+            font-size: 0.95rem;
+            color: var(--cinza-texto);
+            margin-bottom: 0;
+        }
+
+        /* ===== SOBRE ===== */
+        .sobre {
+            padding: 80px 0;
+            background: var(--rosa-claro);
+        }
+
+        .sobre .sobre-img {
+            border-radius: 30px 0 30px 0;
+            box-shadow: 0 20px 50px rgba(216, 27, 96, 0.08);
+        }
+
+        .sobre h2 {
+            font-weight: 700;
+            font-size: clamp(2rem, 3.5vw, 2.8rem);
+            color: var(--rosa-escuro);
+        }
+
+        .sobre h2 span {
+            color: var(--rosa-principal);
+        }
+
+        .sobre p {
+            color: var(--cinza-texto);
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        /* ===== GALERIA ===== */
+        .galeria {
+            padding: 80px 0;
+            background: var(--branco);
+        }
+
+        .galeria .section-title {
+            font-weight: 700;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            color: var(--rosa-escuro);
+            text-align: center;
+        }
+
+        .galeria .section-title span {
+            color: var(--rosa-principal);
+        }
+
+        .galeria .galeria-img {
+            border-radius: 24px 8px 24px 8px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+            transition: transform 0.3s ease;
+            aspect-ratio: 1/1;
+        }
+
+        .galeria .galeria-img:hover {
+            transform: scale(1.02);
+        }
+
+        .galeria .galeria-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* ===== DEPOIMENTOS ===== */
+        .depoimentos {
+            padding: 80px 0;
+            background: var(--lilás-claro);
+        }
+
+        .depoimentos .section-title {
+            font-weight: 700;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            color: var(--rosa-escuro);
+            text-align: center;
+        }
+
+        .depoimentos .section-title span {
+            color: var(--rosa-principal);
+        }
+
+        .depoimento-card {
+            background: var(--branco);
+            padding: 30px 28px;
+            border-radius: 24px 8px 24px 8px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+            height: 100%;
+            transition: transform 0.3s;
+        }
+
+        .depoimento-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .depoimento-card .stars {
+            color: #f4b942;
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+        }
+
+        .depoimento-card p {
+            font-size: 1rem;
+            color: var(--cinza-escuro);
+            font-style: italic;
+            line-height: 1.6;
+        }
+
+        .depoimento-card .author {
+            font-weight: 700;
+            color: var(--rosa-principal);
+            margin-top: 12px;
+        }
+
+        .depoimento-card .author small {
+            font-weight: 400;
+            color: var(--cinza-texto);
+            display: block;
+        }
+
+        /* ===== LOCALIZAÇÃO ===== */
+        .localizacao {
+            padding: 80px 0;
+            background: var(--branco);
+        }
+
+        .localizacao .section-title {
+            font-weight: 700;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            color: var(--rosa-escuro);
+            text-align: center;
+        }
+
+        .localizacao .section-title span {
+            color: var(--rosa-principal);
+        }
+
+        .localizacao .info-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 14px 0;
+            border-bottom: 1px solid var(--rosa-claro);
+        }
+
+        .localizacao .info-item:last-child {
+            border-bottom: none;
+        }
+
+        .localizacao .info-item i {
+            font-size: 1.4rem;
+            color: var(--rosa-principal);
+            width: 30px;
+            text-align: center;
+        }
+
+        .localizacao .info-item span {
+            color: var(--cinza-texto);
+            font-size: 1rem;
+        }
+
+        .localizacao .map-container {
+            border-radius: 30px 0 30px 0;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.06);
+        }
+
+        .localizacao .map-container iframe {
+            width: 100%;
+            height: 350px;
+            border: none;
+        }
+
+        /* ===== RODAPÉ ===== */
+        .footer {
+            background: var(--rosa-escuro);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 40px 0 20px;
+        }
+
+        .footer h5 {
+            color: var(--branco);
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer ul a {
+            color: rgba(255, 255, 255, 0.6);
+            transition: color 0.2s;
+            font-size: 0.9rem;
+        }
+
+        .footer ul a:hover {
+            color: var(--branco);
+        }
+
+        .footer .social-icons {
+            display: flex;
+            gap: 16px;
+            margin-top: 10px;
+        }
+
+        .footer .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--branco);
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .footer .social-icons a:hover {
+            background: var(--rosa-principal);
+            transform: translateY(-3px);
+        }
+
+        .footer .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            padding-top: 20px;
+            margin-top: 30px;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        /* ===== WHATSAPP FLOAT ===== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            z-index: 1050;
+            background: #25d366;
+            color: var(--branco);
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.4rem;
+            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.35);
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            color: var(--branco);
+            box-shadow: 0 8px 40px rgba(37, 211, 102, 0.5);
+        }
+
+        /* ===== RESPONSIVO ===== */
+        @media (max-width: 768px) {
+            .hero-carousel .carousel-item {
+                min-height: 320px;
+            }
+            .hero-carousel .carousel-item img {
+                height: 320px;
+            }
+            .hero-carousel .hero-content h1 {
+                font-size: 1.8rem;
+            }
+            .hero-carousel .hero-content p {
+                font-size: 0.95rem;
+            }
+            .cores-section .cor-item {
+                width: 80px;
+            }
+            .cores-section .cor-item .cor-img {
+                width: 60px;
+                height: 60px;
+            }
+            .sobre {
+                text-align: center;
+            }
+            .localizacao .info-item {
+                justify-content: center;
+            }
+            .whatsapp-float {
+                width: 54px;
+                height: 54px;
+                font-size: 2rem;
+                bottom: 20px;
+                right: 20px;
+            }
+            .servico-card-row {
+                padding: 16px;
+            }
+            .servico-card-row .servico-card-img {
+                flex: 0 0 120px !important;
+            }
+            .servico-card-row .servico-card-img img {
+                width: 120px !important;
+                height: 120px !important;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-carousel .carousel-control-prev,
+            .hero-carousel .carousel-control-next {
+                width: 36px;
+                height: 36px;
+            }
+            .hero-carousel .carousel-control-prev {
+                left: 8px;
+            }
+            .hero-carousel .carousel-control-next {
+                right: 8px;
+            }
+            .cores-section .carousel-control-prev {
+                left: -10px;
+            }
+            .cores-section .carousel-control-next {
+                right: -10px;
+            }
+            .servico-card-row .servico-card-img {
+                flex: 0 0 100px !important;
+            }
+            .servico-card-row .servico-card-img img {
+                width: 100px !important;
+                height: 100px !important;
+            }
+            .depoimento-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+        <div class="container d-flex align-items-center justify-content-between">
+            <a href="#" class="logo">Débora <span>Lima</span></a>
+            <nav class="navbar navbar-expand-lg p-0">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav" aria-controls="menuNav" aria-expanded="false" aria-label="Abrir menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="menuNav">
+                    <ul class="navbar-nav ms-auto align-items-lg-center gap-1">
+                        <li class="nav-item"><a class="nav-link" href="#servicos">Serviços</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#galeria">Galeria</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#depoimentos">Depoimentos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#localizacao">Localização</a></li>
+                        <li class="nav-item ms-lg-2">
+                            <a href="https://wa.me/5582988404882?text=Olá%20Débora!%20Vim%20pelo%20site%20e%20quero%20agendar%20um%20horário." target="_blank" class="btn btn-rosa" style="padding: 8px 24px; font-size: 0.9rem;">
+                                <i class="fab fa-whatsapp"></i> Agendar
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== HERO CARROSSEL ===== -->
+    <section class="hero-carousel" id="home">
+        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=1600&h=500&fit=crop&crop=center" class="d-block w-100" alt="Unhas decoradas" />
+                    <div class="hero-content">
+                        <h1>Unhas que <span>transformam</span><br />sua autoestima</h1>
+                        <p>Especialista em alongamentos, nail art e banho de gel.</p>
+                        <a href="https://wa.me/5582988404882?text=Olá%20Débora!%20Quero%20agendar%20um%20horário." target="_blank" class="btn btn-rosa mt-3">
+                            <i class="fab fa-whatsapp"></i> Agende seu horário
+                        </a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=1600&h=500&fit=crop&crop=center" class="d-block w-100" alt="Alongamento de unhas" />
+                    <div class="hero-content">
+                        <h1>Alongamentos <span>perfeitos</span></h1>
+                        <p>Técnica exclusiva para unhas longas e naturais.</p>
+                        <a href="https://wa.me/5582988404882?text=Olá%20Débora!%20Quero%20agendar%20um%20horário." target="_blank" class="btn btn-rosa mt-3">
+                            <i class="fab fa-whatsapp"></i> Agende seu horário
+                        </a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1600&h=500&fit=crop&crop=center" class="d-block w-100" alt="Nail art" />
+                    <div class="hero-content">
+                        <h1>Nail Art <span>criativa</span></h1>
+                        <p>Desenhos exclusivos para você brilhar em qualquer ocasião.</p>
+                        <a href="https://wa.me/5582988404882?text=Olá%20Débora!%20Quero%20agendar%20um%20horário." target="_blank" class="btn btn-rosa mt-3">
+                            <i class="fab fa-whatsapp"></i> Agende seu horário
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Próximo</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- ===== CORES (ESMALTES) ===== -->
+    <section class="cores-section" id="cores">
+        <div class="container">
+            <h2 class="section-title">Cores <span>disponíveis</span></h2>
+            <p class="text-center text-secondary mb-4" style="font-size: 1rem;">Escolha a cor que combina com você</p>
+
+            <div id="coresCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="d-flex justify-content-center gap-4 flex-wrap" style="gap: 24px;">
+                            <!-- Cor 1 -->
+                            <div class="cor-item">
+                                <div class="cor-img" style="background: #FF6B6B;"></div>
+                                <span class="cor-nome">Vermelho</span>
+                            </div>
+                            <div class="cor-item">
+                                <div class="cor-img" style="background: #FF9F43;"></div>
+                                <span class="cor-nome">Laranja</span>
+                            </div>
+                            <div class="cor-item">
+                                <div class="cor-img" style="background: #FECA57;"></div>
+                                <span class="cor-nome">Amarelo</span>
+                            </div>
+                            <div class="cor-item">
+                                <div class="cor-img" style="background: #55EFC4;"></div>
+                                <span class="cor-nome">Verde</span>
+                            </div>
+                            <div class="cor-item">
+                                <div class="cor-img" style="background: #74B9FF;"></div>
+                                <span class="cor-nome">Azul</span>
+                            </div>
+                            <div class="cor-item">
+                                <div class="cor-img" style="background: #A29BFE;"></div>
+                                <span class="cor-nome">Roxo</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center gap-4 flex-wrap" style="gap: 24px;">
+                            <div class="cor-item">
+                                <div class="cor-img" style="background: #FD79A8;"></div>
+                                <span class="cor-nome">Rosa</span>
+                            </div>
+                            <div class="cor-item">
+                                <div class="cor-img" style="background: #FDCB6E;"></div>
+                                <span class="cor-nome">Dourando</span>
+                            </div>
+                            <div class="cor-item">
+                                <div class="cor-img" style="background: #E17055;"></div>
+                                <span class="cor-nome">Terracota</span>
+                            </div>
+                            <div class="cor-item">
+                                <div class="cor-img" style="background: #00B894;"></div>
+                                <span class="cor-nome">Esmeralda</span>
+                            </div>
+                            <div class="cor-item">
+                                <div class="cor-img" style="background: #0984E3;"></div>
+                                <span class="cor-nome">Marinho</span>
+                            </div>
+                            <div class="cor-item">
+                                <div class="cor-img" style="background: #6C5CE7;"></div>
+                                <span class="cor-nome">Lilás</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center gap-4 flex-wrap" style="gap: 24px;">
+                            <div class="cor-item">
+                                <div class="cor-img" style="background: #FF7675;"></div>
+                                <span class="cor-nome">Salmon</span>
+                            </div>
+                            <div class="cor-item">
+                                <div class="cor-img" style="background: #FDCB6E;"></div>
+                                <span class="cor-nome">Mostarda</span>
+                            </div>
+                            <div class="cor-item">
+                                <div class="cor-img" style="background: #A3CB38;"></div>
+                                <span class="cor-nome">Verde Limão</span>
+                            </div>
+                            <div class="cor-item">
+                                <div class="cor-img" style="background: #7BED9F;"></div>
+                                <span class="cor-nome">Menta</span>
+                            </div>
+                            <div class="cor-item">
+                                <div class="cor-img" style="background: #70A1FF;"></div>
+                                <span class="cor-nome">Celeste</span>
+                            </div>
+                            <div class="cor-item">
+                                <div class="cor-img" style="background: #D980FA;"></div>
+                                <span class="cor-nome">Lavanda</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#coresCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#coresCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Próximo</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SERVIÇOS ===== -->
+    <section class="servicos" id="servicos">
+        <div class="container">
+            <h2 class="section-title">Meus <span>Serviços</span></h2>
+            <p class="text-center text-secondary mb-5" style="font-size: 1.1rem;">Cuidados especiais para suas unhas</p>
+
+            <!-- Card 1 - Imagem esquerda -->
+            <div class="servico-card-row d-flex flex-wrap align-items-center gap-4 mb-4">
+                <div class="servico-card-img flex-shrink-0" style="flex: 0 0 160px;">
+                    <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=300&h=300&fit=crop&crop=center" alt="Manicure" class="img-fluid rounded-4" style="width: 160px; height: 160px; object-fit: cover;">
+                </div>
+                <div class="servico-card-text flex-grow-1">
+                    <h5>Manicure</h5>
+                    <p>Cuidados completos para suas mãos, com esmaltação impecável e duradoura.</p>
+                </div>
+            </div>
+
+            <!-- Card 2 - Imagem direita -->
+            <div class="servico-card-row d-flex flex-wrap align-items-center gap-4 mb-4 flex-row-reverse">
+                <div class="servico-card-img flex-shrink-0" style="flex: 0 0 160px;">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSd26ecrUsnY_jWi1lm2aa77w3LndjuK2MS0QgEpKlCLA&s" alt="Alongamento" class="img-fluid rounded-4" style="width: 160px; height: 160px; object-fit: cover;">
+                </div>
+                <div class="servico-card-text flex-grow-1 text-end">
+                    <h5>Alongamento de Unhas</h5>
+                    <p>Técnica exclusiva para unhas longas e naturais, com total segurança e conforto.</p>
+                </div>
+            </div>
+
+            <!-- Card 3 - Imagem esquerda -->
+            <div class="servico-card-row d-flex flex-wrap align-items-center gap-4 mb-4">
+                <div class="servico-card-img flex-shrink-0" style="flex: 0 0 160px;">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdbzGBRcFLw_OoopoaRT33NqxY8PdFQi-1fXyJeTfjnw&s" alt="Nail Art" class="img-fluid rounded-4" style="width: 160px; height: 160px; object-fit: cover;">
+                </div>
+                <div class="servico-card-text flex-grow-1">
+                    <h5>Nail Art</h5>
+                    <p>Desenhos criativos e personalizados para você arrasar em qualquer ocasião.</p>
+                </div>
+            </div>
+
+            <!-- Card 4 - Imagem direita -->
+            <div class="servico-card-row d-flex flex-wrap align-items-center gap-4 mb-4 flex-row-reverse">
+                <div class="servico-card-img flex-shrink-0" style="flex: 0 0 160px;">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPEbXlGa18mcp4MGTrAzq4rejgav8UkGGj9kkWmJy-5Q&s=10" alt="Banho de Gel" class="img-fluid rounded-4" style="width: 160px; height: 160px; object-fit: cover;">
+                </div>
+                <div class="servico-card-text flex-grow-1 text-end">
+                    <h5>Banho de Gel</h5>
+                    <p>Unhas com brilho intenso e durabilidade imbatível, sem danificar as unhas.</p>
+                </div>
+            </div>
+
+            <!-- Card 5 - Imagem esquerda -->
+            <div class="servico-card-row d-flex flex-wrap align-items-center gap-4 mb-4">
+                <div class="servico-card-img flex-shrink-0" style="flex: 0 0 160px;">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTN-noziowy03NJ_iwobRRFp1VdgNp7e-wih0ZN5ZH9tA&s" alt="Reparo" class="img-fluid rounded-4" style="width: 160px; height: 160px; object-fit: cover;">
+                </div>
+                <div class="servico-card-text flex-grow-1">
+                    <h5>Reparo de Unhas</h5>
+                    <p>Recuperação de unhas quebradas ou danificadas, com técnica e cuidado.</p>
+                </div>
+            </div>
+
+            
+
+            <div class="text-center mt-5">
+                <a href="https://wa.me/5582988404882?text=Olá%20Débora!%20Quero%20saber%20mais%20sobre%20os%20serviços." target="_blank" class="btn btn-rosa">
+                    <i class="fab fa-whatsapp"></i> Fale comigo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SOBRE ===== -->
+    <section class="sobre" id="sobre">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=600&h=450&fit=crop&crop=center" alt="Débora Lima" class="sobre-img">
+                </div>
+                <div class="col-lg-6">
+                    <h2>Sobre <span>Débora Lima</span></h2>
+                    <p class="mt-3">
+                        Especialista em unhas com mais de 5 anos de experiência, apaixonada por transformar o olhar e a autoestima de cada cliente.
+                    </p>
+                    <p>
+                        Meu trabalho vai além da estética: é sobre cuidar de você, ouvir suas necessidades e entregar um resultado que supere suas expectativas. Cada unha é feita com dedicação, utilizando técnicas modernas e produtos de alta qualidade.
+                    </p>
+                    <p>
+                        <strong>Uma unha bem feita renova a autoestima da mulher.</strong> Por isso, cada atendimento é único e personalizado.
+                    </p>
+                    <a href="https://wa.me/5582988404882?text=Olá%20Débora!%20Quero%20agendar%20um%20horário." target="_blank" class="btn btn-rosa mt-2">
+                        <i class="fab fa-whatsapp"></i> Agende seu horário
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== GALERIA ===== -->
+    <section class="galeria" id="galeria">
+        <div class="container">
+            <h2 class="section-title">Minhas <span>Criações</span></h2>
+            <p class="text-center text-secondary mb-5" style="font-size: 1.1rem;">Alguns dos meus trabalhos recentes</p>
+
+            <div class="row g-4">
+                <div class="col-md-3 col-sm-6">
+                    <div class="galeria-img">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAe68H1793uUFlcHbXGhxFKJ8DIKKg58yW1OvPzNDxSQ&s=10" alt="Unha 1" />
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="galeria-img">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRG_-OOEiv4WWCMRPG4bExaaGOD1qON0SV5-oH65GSf7w&s=10" alt="Unha 2" />
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="galeria-img">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRubULhx742zKDuSt4rak7sjfsMPQPvL6ui1tMLzPoTNA&s=10" alt="Unha 3" />
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="galeria-img">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRp7807mC_SwplzHTLOqdF7v2xW1H_oA-BaZtDIhorPQA&s=10" alt="Unha 4" />
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="galeria-img">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStj8_McVYqra20luq0Yp5PykfiJnG4tkrvtpS1djqmoA&s=10" alt="Unha 5" />
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="galeria-img">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgmwax5662meJQWmfF_e0OGrsm7AVvI48WG-Tyc_yzpA&s=10" alt="Unha 6" />
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="galeria-img">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoAmhv1xstj-3T3EVzlVMYn2qBkOedEeDullRB6rE47w&s=10" alt="Unha 7" />
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="galeria-img">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9I505N1mLZ2FBH6PBRzbO4uRwk6CldDCMaOwPGQZSFQ&s=10" alt="Unha 8" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-5">
+                <a href="https://www.instagram.com/deboralima.naills/" target="_blank" class="btn btn-rosa">
+                    <i class="fab fa-instagram"></i> Veja mais no Instagram
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== DEPOIMENTOS ===== -->
+    <section class="depoimentos" id="depoimentos">
+        <div class="container">
+            <h2 class="section-title">O que <span>falam de mim</span></h2>
+            <p class="text-center text-secondary mb-5" style="font-size: 1.1rem;">Depoimentos reais de clientes satisfeitas</p>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="depoimento-card">
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p>"Ótimo atendimento, transformou as minhas unhas 🥰🥰🥰"</p>
+                        <div class="author">Cliente satisfeita <small>Google</small></div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="depoimento-card">
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p>"O espaço é lindo, delicado, e muito acolhedor."</p>
+                        <div class="author">Cliente satisfeita <small>Google</small></div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="depoimento-card">
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p>"Muito top, recomendo de olhos fechados super atenciosa."</p>
+                        <div class="author">Cliente satisfeita <small>Google</small></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-5">
+                <a href="https://wa.me/5582988404882?text=Olá%20Débora!%20Quero%20agendar%20um%20horário." target="_blank" class="btn btn-rosa">
+                    <i class="fab fa-whatsapp"></i> Agende seu horário
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== LOCALIZAÇÃO ===== -->
+    <section class="localizacao" id="localizacao">
+        <div class="container">
+            <h2 class="section-title">Onde <span>estou</span></h2>
+            <p class="text-center text-secondary mb-5" style="font-size: 1.1rem;">Venha me visitar e realçar sua beleza</p>
+
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6">
+                    <div class="info-item">
+                        <i class="fas fa-map-pin"></i>
+                        <span>Rua C 22, 245 – Benedito Bentes 2, Maceió - AL, 57084-674</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <span><a href="https://wa.me/5582988404882" target="_blank">(82) 98840-4882</a></span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Segunda a Sexta: 08h – 18h | Sábado: 08h – 12h</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fab fa-instagram"></i>
+                        <span><a href="https://www.instagram.com/deboralima.naills/" target="_blank">@deboralima.naills</a></span>
+                    </div>
+
+                    <div class="mt-4">
+                        <a href="https://wa.me/5582988404882?text=Olá%20Débora!%20Quero%20agendar%20um%20horário." target="_blank" class="btn btn-rosa">
+                            <i class="fab fa-whatsapp"></i> Agendar Agora
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="map-container">
+                        <iframe src="https://maps.google.com/maps?q=Rua%20C%2022%20245%20Benedito%20Bentes%202%20Macei%C3%B3%20-%20AL%2C%2057084-674&t=m&z=16&output=embed" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== RODAPÉ ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <h5>Débora Lima</h5>
+                    <p style="font-size: 0.9rem; opacity: 0.7;">
+                        Nail Designer especializada em unhas que transformam autoestima. Atendimento personalizado em Maceió.
+                    </p>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5>Links</h5>
+                    <ul>
+                        <li><a href="#servicos">Serviços</a></li>
+                        <li><a href="#sobre">Sobre</a></li>
+                        <li><a href="#galeria">Galeria</a></li>
+                        <li><a href="#depoimentos">Depoimentos</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Contato</h5>
+                    <ul>
+                        <li><i class="fab fa-whatsapp" style="color: #25d366; width: 20px;"></i> <a href="https://wa.me/5582988404882" target="_blank">(82) 98840-4882</a></li>
+                        <li><i class="fas fa-envelope" style="color: var(--rosa-principal); width: 20px;"></i> debora@naills.com</li>
+                        <li><i class="fas fa-clock" style="color: var(--rosa-principal); width: 20px;"></i> 08h – 18h (Seg–Sex)</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Redes Sociais</h5>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/deboralima.naills/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://wa.me/5582988404882" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="mb-0">© 2025 Débora Lima – Nail Designer. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== WHATSAPP FLOAT ===== -->
+    <a href="https://wa.me/5582988404882?text=Olá%20Débora!%20Vim%20pelo%20site%20e%20quero%20mais%20informações." target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+
+            // Fecha o menu mobile ao clicar em um link
+            const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+            const navbarCollapse = document.getElementById('menuNav');
+
+            navLinks.forEach(function(link) {
+                link.addEventListener('click', function() {
+                    if (window.innerWidth < 992) {
+                        const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+                        if (bsCollapse) {
+                            bsCollapse.hide();
+                        }
+                    }
+                });
+            });
+
+            // Scroll suave para âncoras
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href === '#') return;
+                    const target = document.querySelector(href);
+                    if (target) {
+                        e.preventDefault();
+                        const offsetTop = target.getBoundingClientRect().top + window.pageYOffset - 80;
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Inicia o carrossel de cores manualmente (Bootstrap já faz isso)
+            // Garantir que os carrosseis funcionem
+            const coresCarousel = document.getElementById('coresCarousel');
+            if (coresCarousel) {
+                new bootstrap.Carousel(coresCarousel, {
+                    interval: 5000,
+                    wrap: true
+                });
+            }
+
+        });
+    </script>
+</body>
+</html>
